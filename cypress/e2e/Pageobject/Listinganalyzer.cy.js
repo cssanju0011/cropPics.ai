@@ -9,7 +9,7 @@ geturl()
       cy.get(".card_cardDescWrapper__ou0o2").click()
     }
   })
-}
+} 
 
 
 
