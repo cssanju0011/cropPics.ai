@@ -7,7 +7,7 @@
     "test": "npx cypress run",
     "HeadedTest": "npm run test -- --headed",
     "browserchrome": "npm run test -- --browser chrome",
-    "Dashboard": "npm run browserchrome -- --record --key 071ff214-6cf0-4366-889d-fdd7d1dea99a",
+    "Dashboard": "npm run browserchrome -- --record --key 21ee9cd1-ca87-4444-80ad-575165dd864d",
     "singlefile": "npm run test -- --spec cypress/e2e/1-getting-started/Alltestrun.cy.js"
   },
   "author": "",
