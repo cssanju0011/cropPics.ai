@@ -1,4 +1,4 @@
-class billing {
+class cardbilling {
 
     billing() {
         return cy.get("div#__next div.navigationList_bottomItems__sSwR1 > div:nth-child(1) > button#navigationList_navigationButton__u0GNV > span")
@@ -24,4 +24,4 @@ class billing {
 
 }
 
-export default billing;
+export default cardbilling;

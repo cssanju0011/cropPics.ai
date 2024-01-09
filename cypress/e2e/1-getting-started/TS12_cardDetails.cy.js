@@ -1,11 +1,11 @@
 //<reference types="cypress" />
 import Homepage from "../Pageobject/Homepage.cy";
-import billing from "../Pageobject/billingDetails.cy";
+import cardbilling from "../Pageobject/cardDetails.cy";
 
 
 describe('Login', function Userlogin() {
     const homepage = new Homepage()
-    var card = new billing()
+    var card = new cardbilling()
 
     before(() => {
         cy.fixture('example').then(function (data) {
@@ -44,11 +44,6 @@ describe('Login', function Userlogin() {
 
         //Take a screenshot
         cy.screenshot('Editcard');
-
-    })
-
-    after(() => {
-        card.userLogout().click()
 
     })
 })

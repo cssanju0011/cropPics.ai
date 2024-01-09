@@ -32,10 +32,5 @@ class password {
         cy.get('.toast_toastContent__l_VNq').should('have.text',"Incorrect username or password.")
     }
 
-
-
-
-
-
 }
 export default password;

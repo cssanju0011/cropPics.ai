@@ -1,14 +1,13 @@
 //<reference types="cypress" />
 import Homepage from "../Pageobject/Homepage.cy";
-import Lifestyle from "../Pageobject/Lifestylecrop.cy";
 import { random_name } from "../Pageobject/Randomname.cy";
+import Lifestyle from "../Pageobject/Lifestylecrop.cy";
 
 
-describe('Login', function lyfStyle() {
+describe('thirdTest', function () {
 
     const homepage = new Homepage()
-    var headless = new Headless()
-
+    var lifestyle = new Lifestyle()
     var random;
 
     random = random_name();
@@ -21,7 +20,7 @@ describe('Login', function lyfStyle() {
     })
 
     it('lifeStylecrop', function () {
-        cy.viewport(1200, 800);
+
         //visit URL
         homepage.getloginurl()
 
@@ -41,23 +40,56 @@ describe('Login', function lyfStyle() {
         lifestyle.uploadImage().selectFile('cypress/fixtures/UploadImages/image2.jpeg', { force: true })
 
         //Enter project Name
-        lifestyle.projectName().type(random + "lifestyle_crop")
+        lifestyle.projectName().clear().type(random + "lifestyle_crop")
 
-        //Select imagebackground
+        //clicks on select Margin
+        lifestyle.selectMargin().click()
+
+        //optional if select as pixel margin
+        //lifestyle.Margin_based_on_Pixels().click()
+
+        lifestyle.topCropArea().clear().type("90%")
+        lifestyle.leftCropArea().clear().type("90%")
+        lifestyle.rightCropArea().clear().type("90%")
+        lifestyle.bottomCropArea().clear().type("90%")
+
+        //clicks on select output type
+        lifestyle.selectOutputSize().click()
+
+        //ImageCropSize
+        lifestyle.Square().click()
+        //lifestyle.landScape().click()
+        // lifestyle.portRait().click()
+        // lifestyle.amazon().click()
+
+
+        //Clicks on advance setting
+        lifestyle.advanceSetting().click()
+
+        lifestyle.selectOutputFormat().click()
+
+        //Formatsize
+        lifestyle.auto().click()
+        // lifestyle.JPEG().click()
+        // lifestyle.PNG().click()
+        //  lifestyle.WEBP().click()
+
+        lifestyle.imageQuality().clear().type("8")
+
         lifestyle.reviewSettings().click()
 
         //Clicks on crop button
         lifestyle.startCrop().click()
 
         //click on cross button
-        lifestyle.closeAutomation().click() 
+        lifestyle.closeAutomation().click()
+
+        //Take a screenshot 
+        // cy.screenshot('Headless');
     })
 
-    after(() => {
-        lifestyle.userLogout().click()
-
-    })
 })
+
 
 
 

@@ -1,24 +1,31 @@
 //<reference types="cypress" />
-import bdyAware from "./TS05_Bodyaware.cy";
-import lyfStyle from "./TS04_Lifestylecrop.cy";
-import hdless from "./TS03_Headlesscrop.cy";
-import R_align from "./TS06_Resize&align.cy";
-import Hshot from "./TS07_Headshotfix.cy";
-import Flat_M from "./TS08_Flatmagic.cy";
-import v_pics from "./TS09_Volumephotos.cy";
-import S_Imgs from "./TS10_Shadowpics.cy";
-import Createuser from "./TS02_Newusercreate.cy"
-
+import { headlessAutomation } from "./TS03_Headlesscrop.cy"
+import { createNewUser } from "./TS02_Newusercreate.cy"
+import { lifeStyleCrop } from "./TS04_Lifestylecrop.cy"
+import { bodyAwareCrop } from "./TS05_Bodyaware.cy"
+import { resizePhotos } from "./TS06_Resize&align.cy"
+import { headShotCrop } from "./TS07_Headshotfix.cy"
+import { flatPhotos } from "./TS08_Flatmagic.cy"
+import { volumCrop } from "./TS09_Volumephotos.cy"
+import { ShadowCrop } from "./TS10_Shadowpics.cy"
+import { duplicateCart } from "./TS14_duplicateAutomation.cy"
+import { emptyCart } from "./TS13_deleteAutomation.cy"
+import { login,logout} from "./TS16_userlogin&logout.cy"
 
 it('Runalltest', () =>
-    [
-        Createuser(),
-        bdyAware(),
-        lyfStyle(),
-        hdless(),
-        R_align(),
-        Hshot(),
-        Flat_M(),
-        v_pics(),
-        S_Imgs()
+    [   
+        // createNewUser(),
+        headlessAutomation(),
+        cy.wait(3000),
+        lifeStyleCrop(),
+        bodyAwareCrop(),
+        resizePhotos(),
+        headShotCrop(),
+        flatPhotos(),
+        volumCrop(),
+        ShadowCrop(),
+        duplicateCart(),
+        emptyCart(),
+        logout()
+
     ])
