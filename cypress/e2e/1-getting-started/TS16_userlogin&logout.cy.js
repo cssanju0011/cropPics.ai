@@ -1,22 +1,18 @@
 //<reference types="cypress" />
 import Homepage from "../Pageobject/Homepage.cy";
-import copyAutomation from "../Pageobject/cartDuplicate.cy";
 
-export function duplicateCart() {
-    describe('Test12', function duplicate() {
+export function login() {
+    describe('login_logout', function () {
 
         const homepage = new Homepage()
-        const cart = new copyAutomation()
-
         before(() => {
             cy.fixture('example').then(function (data) {
                 this.data = data
 
             })
-
         })
 
-        it('userlogin', function () {
+        it('login', function () {
 
             cy.viewport(1200, 800);
             //visit URL
@@ -31,33 +27,17 @@ export function duplicateCart() {
             //Clicks on signup button
             homepage.Signin().click()
 
-            //click on duplicate automation
-            cart.duplicate().click()
-
-            //click on confirm button
-            cart.confirm().click()
-
-            //Take a screenshot
-            cy.screenshot('copyAutomation');
-
         })
+
     })
-
 }
+export function logout() {
+    const homepage = new Homepage()
+    it('logout', function () {
 
+        homepage.userLogout().click()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    })
+}
 
 

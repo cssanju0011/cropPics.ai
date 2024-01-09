@@ -4,9 +4,9 @@ import Homepage from "../Pageobject/Homepage.cy";
 import { random_name } from "../Pageobject/Randomname.cy";
 
 
-describe('Login', function R_align() {
+describe('Test5', function R_align() {
     const homepage = new Homepage()
-    var body = new Bodyaware()
+    var resize = new Resizeandalign()
     var random;
 
     random = random_name();
@@ -39,13 +39,57 @@ describe('Login', function R_align() {
         resize.uploadImage().selectFile('cypress/fixtures/UploadImages/image2.jpeg', { force: true })
 
         //Enter project Name
-        resize.projectName().type(random + "Resize_align")
+        resize.projectName().clear().type(random + "Resize_align")
+
+        resize.selectBackGround().click()
 
         //Select imagebackground 
-        resize.selectBackground().click()
+        resize.orignalBackground().click()
+        // resize.transParent().click()
+        // resize.whiteBackGround().click()
+        // resize.solidBackGround().click()
 
-        //select Margin
-        resize.selectMargin().invoke('click');
+        resize.selectMargin().click()
+
+        // resize.disbaleMargin().click()
+
+      //  resize.removeAllEdgeContact().click()
+
+
+        resize.selectshadowRatio().click()
+
+        //resize.enableDropShow().click()
+
+
+        //shadow ratio
+      /*  resize.horizontalRatio().clear().type('10')
+        resize.verticalRatio().clear().type('10')
+        resize.BlurRatio().clear().type('10')
+        resize.Scalingfactor().clear().type('10')*/
+
+
+        resize.selectOutputSize().click()
+
+        //ImageCropSize
+        resize.Square().click()
+        //resize.landScape().click()
+        // resize.portRait().click()
+        // resize.amazon().click()
+
+        //Clicks on advance setting
+        resize.advanceSetting().click()
+
+        resize.selectOutputFormat().click()
+
+        //Formatsize
+        resize.auto().click()
+        // resize.JPEG().click()
+        // resize.PNG().click()
+        //  resize.WEBP().click()
+
+        resize.imageQuality().clear().type("8")
+
+        resize.reviewSettings().click()
 
         //Clicks on crop button
         resize.startCrop().click()
@@ -53,9 +97,11 @@ describe('Login', function R_align() {
         //click on cross button
         resize.closeAutomation().click()
 
-    })
-    after(() => {
-        resize.userLogout().click()
+        //Take a screenshot 
+        // cy.screenshot('Headless');
+
 
     })
+
 })
+

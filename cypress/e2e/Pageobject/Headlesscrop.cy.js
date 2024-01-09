@@ -134,11 +134,7 @@ class Headless {
     return cy.get('.LeftPanel_leftHeader__kN2Ek > .ant-btn')
 
   }
-  userLogout() {
-    cy.get('.ant-row > :nth-child(2) > .ant-btn').click({ multiple: true })
-    cy.wait(3000)
-    return cy.get('.Settings_settingsPageLogoutButton__g44dt')
-  }
+  
 }
 
 export default Headless;

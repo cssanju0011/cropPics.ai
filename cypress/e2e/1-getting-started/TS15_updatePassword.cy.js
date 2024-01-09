@@ -19,7 +19,7 @@ describe('Login', function updatePassword() {
 
     it('userlogin', function () {
 
-        cy.viewport(1200, 800);
+       /* cy.viewport(1200, 800);
         //visit URL
         homepage.getloginurl()
 
@@ -30,7 +30,7 @@ describe('Login', function updatePassword() {
         homepage.getUserPassword().type(this.data.Password, { force: true })
 
         //Clicks on signup button
-        homepage.Signin().click()
+        homepage.Signin().click()*/
 
         cy.wait(5000);
 
@@ -60,9 +60,7 @@ describe('Login', function updatePassword() {
 
         //Take a Screenshot
         cy.screenshot('update password');
-
-
-
+        
     })
 
 })

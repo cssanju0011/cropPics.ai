@@ -22,6 +22,12 @@
         return cy.get('.ant-btn-primary > span')
     }
 
+    userLogout() {
+        cy.get('.ant-row > :nth-child(2) > .ant-btn').click({ multiple: true })
+        cy.wait(3000)
+        return cy.get('.Settings_settingsPageLogoutButton__g44dt')
+      }
+
  }
 
  export default Homepage;

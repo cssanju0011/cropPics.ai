@@ -50,12 +50,6 @@ class Flatmagic
     return cy.get('.LeftPanel_leftHeader__kN2Ek > .ant-btn')
 
   }
-  userLogout() {
-    cy.get('.ant-row-space-between .ant-btn-lg').click({ multiple: true })
-    cy.wait(3000)
-    return cy.get('.Settings_settingsPageLogoutButton__g44dt')
-  }
-
 
 }
 
